@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: servicio-docker-prueba-deployment
+  labels:
+    app: servicio-docker-prueba
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: servicio-docker-prueba
+  template:
+    metadata:
+      labels:
+        app: servicio-docker-prueba
+    spec:
+      containers:
+      - name: servicio-docker-prueba
+        image: jlbedrillanadk/servicio-docker-prueba:1.0
+        ports:
+        - containerPort: 8085

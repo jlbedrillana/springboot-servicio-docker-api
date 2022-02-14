@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: servicio-docker-prueba-pod
+  labels:
+    app: servicio-docker-prueba
+spec:
+  containers:
+  - name: servicio-docker-prueba
+    image: jlbedrillanadk/servicio-docker-prueba:1.0
+    ports:
+    - containerPort: 8085
